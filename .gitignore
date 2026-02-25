@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.env.*
+
+# Database (runtime state — not source code)
+aqqrue.db
+aqqrue.db-shm
+aqqrue.db-wal
+threads.json
+
+# Redis
+dump.rdb
+
+# Runtime workspaces & uploads (generated at runtime)
+workspaces/
+uploads/
+
+# Backups
+backup/
+
+# macOS
+.DS_Store
+
+# Claude Code local config
+.claude/
+
+# IDE
+.vscode/
+.idea/
+*.swp

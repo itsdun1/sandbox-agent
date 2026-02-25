@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+openai
+pandas
+numpy
+httpx
+docker
+python-multipart
+e2b-code-interpreter
+redis
