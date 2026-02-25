@@ -100,14 +100,26 @@ docker images sandbox-worker
 
 ### 4b. e2b runtime — no build step needed
 
-e2b spins up cloud sandboxes automatically. Just set `SANDBOX_RUNTIME=e2b` and `E2B_API_KEY`.
+e2b spins up cloud sandboxes automatically. No Docker required.
+
+Get your API key from [e2b.dev/dashboard](https://e2b.dev/dashboard) and set in `.env`:
+
+```bash
+SANDBOX_RUNTIME=e2b
+E2B_API_KEY=your_e2b_api_key
+```
+
+The key is read automatically from the environment — no code changes needed.
 
 ### 5. Run the server
 
 ```bash
-# Load .env and start
-export $(cat .env | xargs)
+# Option A — source the .env file directly (recommended)
+set -a && source .env && set +a
 python server.py
+
+# Option B — inline for a single run
+SANDBOX_RUNTIME=docker OPENAI_API_KEY=... python server.py
 ```
 
 Server starts on [http://localhost:8000](http://localhost:8000).
