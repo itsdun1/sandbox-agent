@@ -540,7 +540,7 @@ def create_runtime() -> RuntimeBackend:
     """Select backend from SANDBOX_RUNTIME env var (default: docker)."""
     backend = os.getenv("SANDBOX_RUNTIME", "docker").lower()
     if backend == "e2b":
-        api_key = 'e2b_e271ac9a73709f00daa4ad103cdc25ba8e8d2385'
+        api_key = os.getenv("E2B_API_KEY")
         if not api_key:
             raise RuntimeError("E2B_API_KEY env var is required when SANDBOX_RUNTIME=e2b")
         log.info("Using e2b cloud sandbox backend")

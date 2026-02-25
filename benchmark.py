@@ -9,8 +9,9 @@ import subprocess
 from e2b_code_interpreter import Sandbox
 
 # ── CONFIG ─────────────────────────────────────────────────────────────────
-E2B_API_KEY = "e2b_b358c359df5bb956cb98b3be3a2f2773ab339c81"   # <-- replace with your key
-os.environ["E2B_API_KEY"] = E2B_API_KEY
+E2B_API_KEY = os.getenv("E2B_API_KEY")
+if not E2B_API_KEY:
+    raise RuntimeError("E2B_API_KEY env var is required to run this benchmark")
 CSV_FILE    = "transactions.csv"
 
 # 5 sequential agent tasks simulating a real accounting thread
