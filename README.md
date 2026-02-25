@@ -57,13 +57,13 @@ Create a `.env` file (or export directly):
 
 ```bash
 # .env
-OPENAI_API_KEY=sk-...
+OPENAI_API_KEY=your_openai_api_key
 
 # Choose runtime: docker (default) or e2b
 SANDBOX_RUNTIME=docker
 
 # Only required for e2b runtime
-E2B_API_KEY=e2b_...
+E2B_API_KEY=your_e2b_api_key
 
 # Redis (defaults shown)
 REDIS_HOST=localhost
